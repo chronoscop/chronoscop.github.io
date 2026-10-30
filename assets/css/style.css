@@ -2022,15 +2022,6 @@ kbd {
   transition: border-color .3s var(--ease-soft), background .3s var(--ease-soft);
 }
 .wx-opt:hover, .wx-opt:focus-visible { border-color: var(--gold-hi); background: rgba(217, 181, 108, .1); }
-.wx-root { text-align: center; font-size: 15px; letter-spacing: .3em; color: var(--gold-hi); }
-.wx-name {
-  text-align: center;
-  font-family: var(--f-kai);
-  font-size: 46px;
-  line-height: 1.2;
-  color: var(--ink);
-  text-shadow: 0 0 18px rgba(217, 181, 108, .35);
-}
 .wx-verse { text-align: center; font-family: var(--f-kai); font-size: 19px; color: var(--ink-2); }
 .wx-voice {
   padding-left: 14px;

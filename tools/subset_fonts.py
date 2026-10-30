@@ -1,7 +1,7 @@
 """Regenerate the font subsets in assets/fonts from the full font files.
 
 Each web font only carries the characters the page renders with it, which keeps the site
-light. Run this after changing any text in index.html or assets/js/main.js:
+light. Run this after changing any text in index.html, assets/js/main.js or assets/js/games.js:
 
     pip install fonttools brotli
     python tools/subset_fonts.py              # full fonts in tools/fonts-src/
@@ -110,7 +110,7 @@ def main():
     body = page.body | set(js) | set(CJK_PUNCT) | ascii_
     body = {c for c in body if c.isprintable()}
     brush = (page.brush | toast_tags) - ascii_
-    # games.js builds 道号 / 灵根 / 批语 at runtime in the kai face (the kai:start…kai:end block)
+    # games.js shows the 结局 and 批语 at runtime in the kai face (the kai:start…kai:end block)
     kai = (page.kai | {c for c in kai_block if ord(c) > 0x2E7F}) - ascii_
 
     OUT.mkdir(parents=True, exist_ok=True)
