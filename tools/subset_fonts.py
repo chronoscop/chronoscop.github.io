@@ -84,6 +84,7 @@ def make_subset(font, chars, out, features):
     sub = subset.Subsetter(options=opts)
     sub.populate(unicodes=[ord(c) for c in have])
     sub.subset(font)
+    font.recalcTimestamp = False      # same input → byte-identical output, so reruns don't show up in git
     font.save(out)
     missing = "".join(sorted(c for c in chars if ord(c) not in cmap and ord(c) > 0x7F))
     note = f"  (not in this font: {missing})" if missing else ""
