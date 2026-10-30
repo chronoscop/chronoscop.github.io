@@ -448,11 +448,19 @@ html:not(.anim) .sys-item { transform: none; transition: opacity .3s linear; }
   position: absolute;
   left: 50%;
   top: var(--cy);
-  /* an explicit column width: iOS Safari sizes vertical text boxes too wide, which pushed the name right */
   width: var(--name);
   transform: translate(-50%, -50%);
 }
-.name-cluster .daohao { width: 100%; text-align: center; }
+/* the name is stacked character by character instead of vertical-rl: WebKit (every iOS browser)
+   places vertical glyphs off-centre, so a plain centred column is the only layout that matches everywhere */
+.name-cluster .daohao {
+  writing-mode: horizontal-tb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.name-cluster .daohao .c { display: block; margin-bottom: -.03em; }
 .daohao {
   margin: 0;
   writing-mode: vertical-rl;
@@ -1937,13 +1945,13 @@ kbd {
   }
   .motto {
     left: auto;
-    right: 18px;
-    top: auto;
-    bottom: 6.5%;
+    right: 14px;
+    top: calc(var(--cy) + var(--R) + 58px);
+    bottom: auto;
   }
   .motto-label { font-size: 12px; gap: 10px; }
   .motto-label::after { inline-size: 36px; }
-  .motto .motto-text { font-size: 19px; margin-block-start: 14px; letter-spacing: .2em; }
+  .motto .motto-text { font-size: 16px; margin-block-start: 12px; letter-spacing: .14em; }
   .motto-text .col-2 { margin-block-start: 14px; margin-inline-start: 1.6em; }
   .nav a { font-size: 14px; padding: 0 7px 0 calc(7px + .26em); letter-spacing: .26em; }
 }
