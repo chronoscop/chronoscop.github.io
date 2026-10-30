@@ -1,0 +1,8 @@
+# Full fonts used by tools/subset_fonts.py (large; download them yourself, see README)
+tools/fonts-src/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
