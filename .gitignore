@@ -6,3 +6,6 @@ tools/fonts-src/
 Thumbs.db
 desktop.ini
 __pycache__/
+
+# local Python env for tools/subset_fonts.py
+tools/.venv/

@@ -17,6 +17,7 @@
   })(document.documentElement);
 </script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/games.js" defer></script>
 </head>
 <body>
 <!--
@@ -46,7 +47,7 @@
 
 <header class="site-head">
   <nav class="nav" aria-label="主导航">
-    <a href="#about">档案</a><span class="nav-dot" aria-hidden="true">·</span><a href="#trials">秘境</a><span class="nav-dot" aria-hidden="true">·</span><a href="#treasury">法宝</a><span class="nav-dot" aria-hidden="true">·</span><a href="#contact">传音</a>
+    <a href="#about">档案</a><span class="nav-dot" aria-hidden="true">·</span><a href="#trials">秘境</a><span class="nav-dot" aria-hidden="true">·</span><a href="#treasury">法宝</a><span class="nav-dot" aria-hidden="true">·</span><a href="#arena">试炼</a><span class="nav-dot" aria-hidden="true">·</span><a href="#contact">传音</a>
   </nav>
 </header>
 
@@ -343,7 +344,30 @@
     </div>
   </section>
 
-  <!-- 四 · 传音符（联系方式） -->
+  <!-- 四 · 试炼场（小游戏，逻辑在 assets/js/games.js） -->
+  <section class="sec sec-arena" id="arena" aria-labelledby="arena-title">
+    <div class="divider" aria-hidden="true"><span class="divider-line"></span><svg class="emblem"><use href="#emblem"/></svg><span class="divider-line"></span></div>
+    <div class="sec-ring sec-ring-right" aria-hidden="true"><svg focusable="false"><use href="#bigring"/></svg></div>
+    <div class="sec-wrap">
+      <div class="sec-side reveal">
+        <h2 class="sec-title" id="arena-title"><span class="zh">试炼场</span><span class="en" lang="en">TRIALS</span></h2>
+        <svg class="sec-gua" viewBox="0 0 26 21" aria-hidden="true" focusable="false"><rect x="0" y="1" width="10.5" height="3.6" rx=".8"/><rect x="15.5" y="1" width="10.5" height="3.6" rx=".8"/><rect x="0" y="8.5" width="10.5" height="3.6" rx=".8"/><rect x="15.5" y="8.5" width="10.5" height="3.6" rx=".8"/><rect x="0" y="16" width="26" height="3.6" rx=".8"/></svg>
+      </div>
+      <div class="sec-body games reveal">
+
+        <article class="game" id="wenxin">
+          <header class="game-head"><h3 class="game-name">问心</h3></header>
+          <p class="game-desc">三道两难，没有标准答案。你每答一句，执棋人便追问一句。问的不是对错，是你的道心前后是否如一。</p>
+          <div class="wx-stage" id="wx-stage" aria-live="polite">
+            <p class="wx-idle">入局之前，先问自己信什么。</p>
+          </div>
+          <button class="game-btn" id="wx-start" type="button">入局</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五 · 传音符（联系方式） -->
   <section class="sec sec-contact" id="contact" aria-labelledby="contact-title">
     <div class="divider" aria-hidden="true"><span class="divider-line"></span><svg class="emblem"><use href="#emblem"/></svg><span class="divider-line"></span></div>
     <div class="sec-ring sec-ring-left" aria-hidden="true"><svg focusable="false"><use href="#bigring"/></svg></div>

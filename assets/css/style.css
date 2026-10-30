@@ -1959,3 +1959,87 @@ kbd {
 @media (max-height: 640px) and (min-aspect-ratio: 4/5) {
   .motto { display: none; }
 }
+
+/* ───────────────────────── 试炼场（小游戏） ───────────────────────── */
+
+.games {
+  display: grid;
+  max-width: 760px;
+}
+.game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(217, 181, 108, .3);
+  background: linear-gradient(180deg, rgba(22, 30, 54, .72), rgba(11, 16, 30, .5));
+}
+.game-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.game-name { margin: 0; font-family: var(--f-brush); font-weight: 400; font-size: 34px; line-height: 1.1; color: var(--ink); }
+.game-desc { margin: 0; font-size: 15px; line-height: 1.8; color: var(--ink-2); }
+.game-btn {
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 0 22px;
+  font: inherit;
+  font-size: 16px;
+  letter-spacing: .2em;
+  color: #0b1020;
+  background: linear-gradient(180deg, var(--gold-hi), var(--gold));
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: filter .3s var(--ease-soft), transform .3s var(--ease-out);
+}
+.game-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.wx-stage {
+  min-height: 248px;
+  padding: 18px;
+  border: 1px solid var(--hair-soft);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(217, 181, 108, .08), rgba(0, 0, 0, 0) 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.wx-stage p { margin: 0; }
+.wx-idle { text-align: center; font-family: var(--f-kai); font-size: 24px; color: var(--ink-2); }
+.wx-count { font-size: 13px; letter-spacing: .3em; color: var(--gold); }
+.wx-q { font-size: 18px; line-height: 1.7; color: var(--ink); }
+.wx-opts { display: flex; flex-direction: column; gap: 8px; }
+.wx-opt {
+  min-height: 44px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  color: var(--ink);
+  background: rgba(10, 14, 27, .6);
+  border: 1px solid var(--hair);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color .3s var(--ease-soft), background .3s var(--ease-soft);
+}
+.wx-opt:hover, .wx-opt:focus-visible { border-color: var(--gold-hi); background: rgba(217, 181, 108, .1); }
+.wx-root { text-align: center; font-size: 15px; letter-spacing: .3em; color: var(--gold-hi); }
+.wx-name {
+  text-align: center;
+  font-family: var(--f-kai);
+  font-size: 46px;
+  line-height: 1.2;
+  color: var(--ink);
+  text-shadow: 0 0 18px rgba(217, 181, 108, .35);
+}
+.wx-verse { text-align: center; font-family: var(--f-kai); font-size: 19px; color: var(--ink-2); }
+.wx-voice {
+  padding-left: 14px;
+  border-left: 2px solid var(--cinnabar);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.wx-who { font-size: 13px; letter-spacing: .3em; color: var(--cinnabar); filter: brightness(1.4); }
+.wx-end { text-align: center; font-family: var(--f-kai); font-size: 52px; line-height: 1.2; color: var(--ink); text-shadow: 0 0 18px rgba(217, 181, 108, .35); }
+.wx-recap { list-style: none; margin: 4px 0 0; padding: 0; font-size: 14px; line-height: 1.9; color: var(--ink-2); }
+.wx-recap li::before { content: "◆ "; color: var(--gold); }

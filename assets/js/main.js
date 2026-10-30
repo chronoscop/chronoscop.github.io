@@ -1142,6 +1142,8 @@
     }, opt.hold || 5600);
   }
 
+  window.dongfuSay = say;                         // games.js reports results through the same toasts
+
   function introToasts() {
     setTimeout(function () { say('叮', '检测到道友神识降临'); }, ANIM ? 350 : 120);
   }

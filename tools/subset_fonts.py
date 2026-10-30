@@ -29,8 +29,8 @@ OUT = ROOT / "assets" / "fonts"
 
 # Which elements are set in which display face. Keep in sync with assets/css/style.css.
 BRUSH = {"daohao", "zh", "panel-name", "realm-badge", "medal", "trial-medal", "trial-name",
-         "tr-name", "sys-line-tag", "fu-k"}                       # 志莽行书
-KAI = {"motto-text", "bn-verse", "forge-verse", "seal-in"}         # 马善政楷书
+         "tr-name", "sys-line-tag", "fu-k", "game-name"}                       # 志莽行书
+KAI = {"motto-text", "bn-verse", "forge-verse", "seal-in", "wx-idle"}         # 马善政楷书
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",
         "source", "track", "wbr"}
 CJK_PUNCT = "，。、；：？！“”‘’（）《》「」【】—…·"
@@ -101,13 +101,17 @@ def main():
     page = Collector()
     page.feed((ROOT / "index.html").read_text(encoding="utf-8"))
     js = strip_js_comments((ROOT / "assets" / "js" / "main.js").read_text(encoding="utf-8"))
-    toast_tags = set("".join(re.findall(r"say\('([^']+)'", js)))     # system-toast labels use the brush face
+    games_src = (ROOT / "assets" / "js" / "games.js").read_text(encoding="utf-8")
+    js += strip_js_comments(games_src)
+    kai_block = "".join(re.findall(r"kai:start(.*?)kai:end", games_src, flags=re.S))
+    toast_tags = set("".join(re.findall(r"(?:say|toast)\('([^']+)'", js)))     # system-toast labels use the brush face
     ascii_ = {chr(c) for c in range(0x20, 0x7F)}
 
     body = page.body | set(js) | set(CJK_PUNCT) | ascii_
     body = {c for c in body if c.isprintable()}
     brush = (page.brush | toast_tags) - ascii_
-    kai = page.kai - ascii_
+    # games.js builds 道号 / 灵根 / 批语 at runtime in the kai face (the kai:start…kai:end block)
+    kai = (page.kai | {c for c in kai_block if ord(c) > 0x2E7F}) - ascii_
 
     OUT.mkdir(parents=True, exist_ok=True)
     cjk_features = ["vert", "vrt2", "kern"]
