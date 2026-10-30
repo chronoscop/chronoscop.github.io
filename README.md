@@ -56,6 +56,8 @@ docs/preview.jpg         README 预览图
 
 脚本会自动从页面里找出每种字体需要渲染的字，重新生成 `assets/fonts/*.woff2`。
 
+改完样式、脚本或字体后，把 `index.html` 和 `assets/css/style.css` 里的 `?v=` 版本号统一换成新的（比如当天日期），浏览器就会重新下载，不会出现新页面配旧样式的情况。
+
 页面里的 Kaggle 名次、奖牌等数据截至 2026 年 10 月，需要时直接改 `index.html` 里的数字。
 
 ## 许可

@@ -88,8 +88,9 @@
     recap.forEach(function (line) { ul.appendChild(el('li', '', line)); });
     stage.appendChild(ul);
     btn.textContent = '再入一局';
+    btn.hidden = false;                // the button only comes back once the round is over
     toast('问心', '问心已毕：' + end[0]);
   }
 
-  btn.addEventListener('click', function () { holds = 0; sides = []; recap = []; ask(0); });
+  btn.addEventListener('click', function () { btn.hidden = true; holds = 0; sides = []; recap = []; ask(0); });
 })();

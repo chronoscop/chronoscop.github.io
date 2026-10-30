@@ -2,22 +2,22 @@
 
 @font-face {
   font-family: "Zhi Mang Xing";
-  src: url("../fonts/zhimangxing.woff2") format("woff2");
+  src: url("../fonts/zhimangxing.woff2?v=20261030") format("woff2");
   font-display: block;
 }
 @font-face {
   font-family: "LXGW WenKai";
-  src: url("../fonts/lxgwwenkai.woff2") format("woff2");
+  src: url("../fonts/lxgwwenkai.woff2?v=20261030") format("woff2");
   font-display: swap;
 }
 @font-face {
   font-family: "Ma Shan Zheng";
-  src: url("../fonts/mashanzheng.woff2") format("woff2");
+  src: url("../fonts/mashanzheng.woff2?v=20261030") format("woff2");
   font-display: block;
 }
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("../fonts/cormorant.woff2") format("woff2");
+  src: url("../fonts/cormorant.woff2?v=20261030") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
