@@ -448,8 +448,11 @@ html:not(.anim) .sys-item { transform: none; transition: opacity .3s linear; }
   position: absolute;
   left: 50%;
   top: var(--cy);
+  /* an explicit column width: iOS Safari sizes vertical text boxes too wide, which pushed the name right */
+  width: var(--name);
   transform: translate(-50%, -50%);
 }
+.name-cluster .daohao { width: 100%; text-align: center; }
 .daohao {
   margin: 0;
   writing-mode: vertical-rl;
